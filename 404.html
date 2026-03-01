@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Page Not Found</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        html,body{height:100%}
+        body{font-family:'Rubik',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background: linear-gradient(180deg,#0b2545 0%, #1e3a8a 55%, #ff7a59 100%);color:#fff;display:flex;align-items:center;justify-content:center;padding:3rem}
+        .container{max-width:720px;text-align:center}
+        h1{font-size:2.25rem;margin-bottom:.5rem;font-weight:700;color:rgba(255,255,255,0.98)}
+        p{margin:.5rem 0 1rem;color:rgba(255,255,255,0.92)}
+        a.button{display:inline-block;padding:.5rem .85rem;background:transparent;border:1px solid rgba(255,255,255,0.9);color:rgba(255,255,255,0.98);border-radius:6px;text-decoration:none}
+        .small{color:rgba(255,255,255,0.75);font-size:.9rem;margin-top:1rem}
+        @media (max-width:600px){h1{font-size:1.25rem}}
+    </style>
+</head>
+<body>
+    <div class="container" role="main">
+        <h1>404 — Page Not Found</h1>
+        <p>Sorry, we couldn't find the page you're looking for.</p>
+        <p><a href="/index.html" class="button">Go home</a></p>
+        <p class="small">You will be redirected to the homepage in <span id="count">10</span> seconds.</p>
+    </div>
+    <script>
+        (function(){
+            var t = 10;
+            var el = document.getElementById('count');
+            var iv = setInterval(function(){
+                t--; if(el) el.textContent = t;
+                if(t <= 0){ clearInterval(iv); window.location.href = '/index.html'; }
+            }, 1000);
+        })();
+    </script>
+</body>
+</html>
